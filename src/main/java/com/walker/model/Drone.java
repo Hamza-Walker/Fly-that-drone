@@ -4,8 +4,8 @@ public class Drone {
     private Position position;
 
 
-    public Drone(Position possition) {
-        this.position = possition;
+    public Drone(Position position) {
+        this.position = position;
     }
 
     public Position getPosition() {
