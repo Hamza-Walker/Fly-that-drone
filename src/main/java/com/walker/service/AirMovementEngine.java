@@ -1,6 +1,7 @@
 package com.walker.service;
 
 import com.walker.model.Drone;
+import com.walker.model.Position;
 
 public class AirMovementEngine extends MovementEngine {
     @Override
@@ -18,12 +19,14 @@ public class AirMovementEngine extends MovementEngine {
     }
 
     private void moveUp(Drone drone) {
-        // Implementation for moving the drone up
-        System.out.println("Moving drone up");
+        Position currentPosition = drone.getPosition();
+        Position newPosition = new Position(currentPosition.x(), currentPosition.y(), currentPosition.z() + 1);
+        drone.setPosition(newPosition);
     }
 
     private void moveDown(Drone drone) {
-        // Implementation for moving the drone down
-        System.out.println("Moving drone down");
+        Position currentPosition = drone.getPosition();
+        Position newPosition = new Position(currentPosition.x(), currentPosition.y(), currentPosition.z() - 1);
+        drone.setPosition(newPosition);
     }
 }
